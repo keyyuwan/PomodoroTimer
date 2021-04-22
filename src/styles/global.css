@@ -1,0 +1,21 @@
+:root {
+    --dark: #121212;
+    --light-dark: #242424;
+    --line: #f2f3f5;
+    --red: #e83f5b;
+    --green: #4cd62b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark);
+}
+
+html {
+    font-family: Roboto, sans-serif;
+}
