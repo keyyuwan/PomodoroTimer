@@ -11,9 +11,11 @@ function App() {
   const [time, setTime] = useState(25 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
+  const [showTime, setShowTime] = useState(false)
 
   function initiateTimer() {
     setIsActive(true)
+    setShowTime(true)
   }
 
   let countdown;
@@ -22,6 +24,7 @@ function App() {
     setIsActive(false)
     setHasFinished(false)
     setTime(25 * 60)
+    setShowTime(false)
   }
 
   function showNotification() {
@@ -45,7 +48,7 @@ function App() {
   }, [isActive, time])
 
   return (
-    <TimerContext.Provider value={{ isActive, time, initiateTimer, resetTimer, hasFinished }}>
+    <TimerContext.Provider value={{ isActive, time, initiateTimer, resetTimer, hasFinished, showTime }}>
       <div className="container">
         <Header />
         <Timer />

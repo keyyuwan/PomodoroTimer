@@ -10,15 +10,12 @@
 
 .timerContainer {
     height: 50%;
-    border: 3px solid var(--red);
+    border: 2.5px solid var(--red);
 
     color: white;
 
     display: flex;
     align-items: center;
-
-    font-size: 10rem;
-    font-weight: 700;
 
     margin-top: -5rem;
     padding: 1rem 4rem;
@@ -29,6 +26,29 @@
 
 .timerContainer:hover {
     background: var(--red);
+}
+
+.timerContainer span {
+    font-size: 10rem;
+    font-weight: 700;
+}
+
+.time {
+    margin-left: 2rem;
+}
+
+.time p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-bottom: 1px solid var(--red);
+}
+
+.time p:first-child {
+    margin-bottom: 2rem;
+}
+
+.time p:last-child {
+    margin-top: 2rem;
 }
 
 .timerButton {

@@ -17,9 +17,16 @@
     letter-spacing: 1px;
 }
 
+.header span {
+    color: white;
+    font: 300 1.8rem Roboto, sans-serif;
+    text-transform: capitalize;
+    margin-right: 7rem;
+}
+
 .header button {
     background: none;
-    color: white;
+    color: var(--red);
     border: 0;
     cursor: pointer;
 
