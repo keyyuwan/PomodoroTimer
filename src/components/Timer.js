@@ -46,12 +46,19 @@ export default function Timer() {
                     <span>{secondLeft}</span>
                     <span>{secondRight}</span>
                 </div>
-                { showTime && (
-                    <div className={styles.time}>
-                        <p>{`Você começou às: ${currentHours}:${currentMinutes}`}</p>
-                        <p>{`E vai terminar às: ${getUpdatedHours()}:${getUpdatedMinutes()}`}</p>
-                    </div>
+                { hasFinished ? (
+                    <p className={styles.congratsMessage}>🎉 Parabéns! Você terminou um ciclo, <br /> agora faça uma pausa de 5 minutos.</p>
+                ) : (
+                    <>
+                        { showTime && (
+                            <div className={styles.time}>
+                                <p>{`Você começou às: ${currentHours}:${currentMinutes}`}</p>
+                                <p>{`E vai terminar às: ${getUpdatedHours()}:${getUpdatedMinutes()}`}</p>
+                            </div>
+                        ) }
+                    </>
                 ) }
+
             </div>
             { hasFinished ? (
                  <button 

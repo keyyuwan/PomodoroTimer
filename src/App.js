@@ -32,7 +32,7 @@ function App() {
 
     if (Notification.permission === 'granted') {
       new Notification('Pomodoro completado! 🎉', {
-        body: 'Descanse por 5 minutos e depois, inicie outro Pomodoro'
+        body: 'Uhul!'
       })
     }
   }
