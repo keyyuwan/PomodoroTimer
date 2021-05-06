@@ -28,6 +28,16 @@
     background: var(--red);
 }
 
+.timerContainer.light {
+    color: var(--red);
+    /* color: black; */
+    transition: 200ms;
+}
+
+.timerContainer.light:hover {
+    color: white;
+}
+
 .timerContainer span {
     font-size: 10rem;
     font-weight: 700;
@@ -74,4 +84,8 @@
 
 .timerButton:hover {
     background: var(--red);
+}
+
+.timerButton.light {
+    color: black;
 }

@@ -1,9 +1,12 @@
 import { useContext } from 'react'
 import { TimerContext } from '../contexts/TimerContext'
+import { useTheme } from '../contexts/ThemeContext'
 
 import styles from '../styles/components/Timer.module.css'
 
 export default function Timer() {
+
+    const { isLight } = useTheme()
 
     const { isActive, time, initiateTimer, resetTimer, hasFinished, showTime } = useContext(TimerContext);
 
@@ -36,7 +39,7 @@ export default function Timer() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.timerContainer}>
+            <div className={isLight ? `${styles.timerContainer} ${styles.light}` : styles.timerContainer}>
                 <div>
                     <span>{minuteLeft}</span>
                     <span>{minuteRight}</span>
@@ -62,19 +65,19 @@ export default function Timer() {
             </div>
             { hasFinished ? (
                  <button 
-                     className={styles.timerButton}
+                     className={isLight ? `${styles.timerButton} ${styles.light}` : styles.timerButton}
                      onClick={resetTimer}
                  >Reiniciar Pomodoro</button>
             ) : (
                 <>
                     { isActive ? (
                         <button 
-                            className={styles.timerButton}
+                            className={isLight ? `${styles.timerButton} ${styles.light}` : styles.timerButton}
                             onClick={resetTimer}
                         >Parar Pomodoro</button>
                     ) : (
                         <button 
-                            className={styles.timerButton}
+                            className={isLight ? `${styles.timerButton} ${styles.light}` : styles.timerButton}
                             onClick={initiateTimer}
                         >Iniciar Pomodoro</button>
                     )}

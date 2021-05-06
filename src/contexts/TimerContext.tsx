@@ -1,8 +1,21 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect, ReactNode } from 'react'
 
-export const TimerContext = createContext()
+interface TimerContextData {
+  time: number;
+  isActive: boolean;
+  hasFinished: boolean;
+  showTime: boolean;
+  initiateTimer: () => void;
+  resetTimer: () => void;
+}
 
-export function TimerContextProvider({ children }) {
+interface TimerContextProviderProps {
+  children: ReactNode;
+}
+
+export const TimerContext = createContext({} as TimerContextData)
+
+export function TimerContextProvider({ children }: TimerContextProviderProps) {
   const [time, setTime] = useState(25 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
@@ -13,7 +26,7 @@ export function TimerContextProvider({ children }) {
     setShowTime(true)
   }
 
-  let countdown;
+  let countdown: NodeJS.Timeout;
   function resetTimer() {
     clearTimeout(countdown)
     setIsActive(false)
